@@ -1,21 +1,19 @@
-import random
+pada = False
+licznik_nie = 0
 
-def zgadnij_pogode():
-    odpowiedz = ["tak", "nie"]
-    prawidlowa_odpowiedz = random.choice(odpowiedz)
+
+while not pada:
+    odpowiedz = input("czy pada? (tak/nie/nie wiem): ").lower()
     
-    while true:
-        odpowiedz_uytkownika = input("czy dzisiaj pada descz? (tak/nie): ").lower()
-    
-    if odpowiedz_uzytkownika not in odpowiedz:
-        print("proszę, odpowiedz 'tak' lub 'nie'.")
-        continue
-    
-    if odpowiedz_uzytkownika == prawidlowa_odpowiedz:
-        print("gratulacje! zgadłeś poprawnie.")
-        break
+    if odpowiedz == "tak":
+        pada = True
+    elif odpowiedz == "nie":
+        licznik_nie += 1
+    elif odpowiedz == "nie wiem":
+        print("To sobie pójdzi na zewnątrz i se zoba.")
     else:
-        print("niestety, to nie jest poprawna odpowiedź. Spróbuj ponownie.")
+        print("nie kumam. Proszę odpowiedz 'tak', 'nie' lub 'nie wiem'.")
         
-        gadnij_pogode()
+        
+    print(f"liczba odpowiedzi 'nie': {licznik_nie}")    
 
